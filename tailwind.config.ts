@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
@@ -8,13 +8,23 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      colors: {
+        bg: '#F1F1E7',
+        'main-1': '#1FDF9A',
+        'main-2': '#082F3B',
+        'sub-1': '#242325',
+        'sub-2': '#8D8D8D',
+        'sub-3': '#E0E0E0',
+        point: '#FD7109',
+      },
+      fontFamily: {
+        'spoqa-sans': ['spoqa-sans', 'sans-serif'],
+      },
+      boxShadow: {
+        'shadow-1': '.125rem .125rem .5rem rgba(0, 0, 0, 0.05)',
       },
     },
   },
-  plugins: [],
-}
-export default config
+  plugins: [require('tailwind-scrollbar-hide')],
+};
+export default config;
