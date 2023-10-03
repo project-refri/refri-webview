@@ -16,8 +16,10 @@ const config: Config = {
         'sub-2': '#8D8D8D',
         'sub-3': '#E0E0E0',
         point: '#FD7109',
+        brown: '#9A8266',
       },
       fontFamily: {
+        poppins: ['poppins', 'sans-serif'],
         'spoqa-sans': ['spoqa-sans', 'sans-serif'],
       },
       boxShadow: {
