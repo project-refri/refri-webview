@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import BottomNavigation from '../components/BottomNavigation';
 import { mockHotRecipe, mockRecentRecipe } from '@/mocks/mockRecipe';
-import { CommentIcon, HeartIcon, Logo } from '../svgs';
+import { HeartIcon, Logo } from '../svgs';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
