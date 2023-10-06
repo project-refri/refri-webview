@@ -9,7 +9,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 export default function Home() {
   return (
     <main className="flex flex-col overflow-scroll pb-[5.375rem] pt-[3.75rem] scrollbar-hide">
-      <div className="fixed top-0 z-50 h-[3.75rem] w-full bg-bg px-[1.25rem] pt-[1rem]">
+      <div className="fixed top-0 z-50 h-[3.75rem] w-full max-w-[80rem] bg-bg px-[1.25rem] pt-[1rem]">
         <Logo className="h-[1.25rem] w-[5rem]" color="#242325" />
       </div>
 
@@ -63,11 +63,11 @@ export default function Home() {
             전체보기
           </p>
         </div>
-        <div className="mt-4 flex h-[16.0625rem] w-fit flex-col flex-wrap gap-[1rem] overflow-scroll scrollbar-hide">
+        <div className="mt-4 flex h-[16.0625rem] w-full flex-col flex-wrap gap-[1rem] overflow-scroll scrollbar-hide">
           {mockHotRecipe.map((recipe, index) => (
             <div
               key={index}
-              className="flex h-[4.6875rem] w-[16.5625rem] gap-[.8438rem] rounded-tl-[1rem]"
+              className="flex h-[4.6875rem] min-w-[16.5625rem] flex-1 gap-[.8438rem] rounded-tl-[1rem]"
             >
               <Image
                 src={recipe.image}
@@ -106,7 +106,7 @@ export default function Home() {
             전체보기
           </p>
         </div>
-        <div className="mt-4 flex w-full flex-col gap-[1rem]">
+        <div className="mt-4 grid w-full gap-[1rem] md:grid-cols-2">
           {mockRecentRecipe.map((recipe, index) => (
             <div key={index} className="flex flex-col gap-[.7344rem] rounded-tl-[1rem]">
               <Image

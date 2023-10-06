@@ -25,7 +25,7 @@ export default function BottomNavigation() {
   ];
 
   return (
-    <div className="fixed bottom-0 z-50 flex h-[5.375rem] w-full bg-[rgba(255,255,255,0.95)] shadow-sm">
+    <div className="fixed bottom-0 z-50 flex h-[5.375rem] w-full max-w-[80rem] bg-[rgba(255,255,255,0.95)] shadow-sm">
       {navigationItems.map(({ path, name, Icon }) => (
         <Link
           key={path}

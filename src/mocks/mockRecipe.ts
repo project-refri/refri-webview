@@ -52,4 +52,34 @@ export const mockRecentRecipe: Pick<Recipe, 'name' | 'views' | 'image' | 'author
       profileImage: '/img/profile_1.png',
     },
   },
+  {
+    name: '리프리 여름 주의보! 식재료 관리법 바로알기',
+    views: 242752,
+    image: '/img/recipe_1.png',
+    like: 15,
+    author: {
+      name: '김프리',
+      profileImage: '/img/profile_1.png',
+    },
+  },
+  {
+    name: '리프리 여름 주의보! 식재료 관리법 바로알기',
+    views: 242752,
+    image: '/img/recipe_1.png',
+    like: 15,
+    author: {
+      name: '김프리',
+      profileImage: '/img/profile_1.png',
+    },
+  },
+  {
+    name: '리프리 여름 주의보! 식재료 관리법 바로알기',
+    views: 242752,
+    image: '/img/recipe_1.png',
+    like: 15,
+    author: {
+      name: '김프리',
+      profileImage: '/img/profile_1.png',
+    },
+  },
 ];
