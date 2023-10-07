@@ -12,8 +12,8 @@ export default function RecipeDetail() {
       <div className="relative h-[25rem] w-full">
         <Image
           src={mockRecipe1.thumbnail}
-          height={400}
-          width={400}
+          height={800}
+          width={800}
           alt=""
           className="h-[25rem] w-full object-cover"
         />
@@ -59,8 +59,8 @@ export default function RecipeDetail() {
             >
               <Image
                 src={step.images[0]}
-                width={70}
-                height={54}
+                width={560}
+                height={432}
                 className="aspect-[70/54] w-[20%] object-cover"
                 alt=""
               />
