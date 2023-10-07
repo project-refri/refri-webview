@@ -70,7 +70,7 @@ export default function Home() {
               className="flex h-[4.6875rem] min-w-[16.5625rem] flex-1 gap-[.8438rem] rounded-tl-[1rem]"
             >
               <Image
-                src={recipe.image}
+                src={recipe.thumbnail}
                 width={80}
                 height={75}
                 className="h-[4.6875rem] w-[5rem] rounded-[.25rem] rounded-tl-[1rem] object-cover"
@@ -110,7 +110,7 @@ export default function Home() {
           {mockRecentRecipe.map((recipe, index) => (
             <div key={index} className="flex flex-col gap-[.7344rem] rounded-tl-[1rem]">
               <Image
-                src={recipe.image}
+                src={recipe.thumbnail}
                 width={350}
                 height={130}
                 className="aspect-[350/130] w-full rounded-[.3125rem] rounded-tl-[1rem] object-cover"
@@ -126,10 +126,10 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="flex items-center">
-                  <p className="font-spoqa-sans text-[.625rem] text-brown">{recipe.author.name}</p>
+                  <p className="font-spoqa-sans text-[.625rem] text-brown">{recipe.owner?.name}</p>
                   <HeartIcon className="ml-4 h-[.6119rem] w-[.6875rem]" />
                   <p className="ml-1 font-poppins text-[.75rem] font-light text-brown">
-                    {recipe.like}
+                    {recipe.likes}
                   </p>
                 </div>
               </div>

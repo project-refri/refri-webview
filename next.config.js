@@ -7,14 +7,9 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'images.unsplash.com',
+        hostname: '*',
         port: '',
       },
-      {
-        protocol: 'https',
-        hostname: 'plus.unsplash.com',
-        port: '',
-      }
     ]
   },
 };

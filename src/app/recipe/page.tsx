@@ -27,7 +27,7 @@ export default function Recipe() {
             <div
               key={index}
               className="relative flex w-[8.75rem] shrink-0 flex-col justify-end gap-[.375rem] rounded-[.3125rem] rounded-tl-[2.1875rem] bg-cover bg-center px-[.9375rem] pb-[.9375rem]"
-              style={{ backgroundImage: `url(${recipe.image})` }}
+              style={{ backgroundImage: `url(${recipe.thumbnail})` }}
             >
               <div
                 className="absolute left-0 top-0 h-full w-full rounded-[.3125rem] rounded-tl-[2.1875rem]"
@@ -39,7 +39,7 @@ export default function Recipe() {
                 {recipe.name}
               </h2>
               <p className="z-10 font-spoqa-sans text-[.625rem] leading-[1.5rem] text-white">
-                {recipe.author.name}
+                {recipe.owner?.name}
               </p>
             </div>
           ))}
@@ -59,7 +59,7 @@ export default function Recipe() {
           {mockRecentRecipe.map((recipe, index) => (
             <div key={index} className="flex flex-col gap-[.7344rem] rounded-tl-[1rem]">
               <Image
-                src={recipe.image}
+                src={recipe.thumbnail}
                 width={350}
                 height={130}
                 className="aspect-[350/130] w-full rounded-[.3125rem] rounded-tl-[1rem] object-cover"
@@ -75,10 +75,10 @@ export default function Recipe() {
                   </p>
                 </div>
                 <div className="flex items-center">
-                  <p className="font-spoqa-sans text-[.625rem] text-brown">{recipe.author.name}</p>
+                  <p className="font-spoqa-sans text-[.625rem] text-brown">{recipe.owner?.name}</p>
                   <HeartIcon className="ml-4 h-[.6119rem] w-[.6875rem]" />
                   <p className="ml-1 font-poppins text-[.75rem] font-light text-brown">
-                    {recipe.like}
+                    {recipe.likes}
                   </p>
                 </div>
               </div>
