@@ -139,6 +139,7 @@ const RecipeStepView = ({ open, setOpen, recipe }: RecipeStepViewProps) => {
         containerStyle={{ height: '100%' }}
         index={currentStep}
         onChangeIndex={(index) => setCurrentStep(index)}
+        enableMouseEvents
       >
         {recipe.recipe_steps.map((step, index) => (
           <div key={index} className="flex h-full w-full flex-col">
@@ -162,7 +163,7 @@ const RecipeStepView = ({ open, setOpen, recipe }: RecipeStepViewProps) => {
         ))}
       </SwipeableViews>
 
-      <div className="fixed bottom-0 h-[10rem] w-full rounded-[.3125rem] rounded-tl-[1.25rem] border-[.0625rem] border-brown bg-[#F1F1E7] px-[3.125rem] pt-[1.25rem]">
+      <div className="h-[10rem] w-full rounded-[.3125rem] rounded-tl-[1.25rem] border-[.0625rem] border-brown bg-[#F1F1E7] px-[3.125rem] pt-[1.25rem]">
         <p className="font-poppins text-[.8125rem] font-medium text-brown">How much?</p>
         <div className="grid flex-1 grid-cols-2">
           {recipe.recipe_steps[currentStep].ingredients.map((ingredient, index) => (
