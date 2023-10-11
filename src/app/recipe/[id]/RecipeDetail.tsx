@@ -4,7 +4,7 @@ import ImageWithFallback from '@/components/ImageWithFallback';
 import { getRecipeById } from '@/lib/api/recipe';
 import { BackIcon } from '@/svgs';
 import { useQuery } from '@tanstack/react-query';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import SwipeableViews from 'react-swipeable-views';
 
 interface RecipeDetailProps {
@@ -17,6 +17,13 @@ export default function RecipeDetail({ id, initialRecipe }: RecipeDetailProps) {
     initialData: initialRecipe,
   });
   const [recipeStepViewOpen, setRecipeStepViewOpen] = useState(false);
+
+  useEffect(() => {
+    window.ReactNativeWebView.postMessage({ type: 'isFullScreen', payload: true });
+    return () => {
+      window.ReactNativeWebView.postMessage({ type: 'isFullScreen', payload: false });
+    };
+  }, []);
 
   return (
     <main className="flex flex-col scrollbar-hide">

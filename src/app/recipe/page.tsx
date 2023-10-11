@@ -1,12 +1,15 @@
 'use client';
 import Image from 'next/image';
 import { mockHotRecipe, mockRecentRecipe } from '@/mocks/mockRecipe';
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { HeartIcon, Logo, RecipeLogoIcon } from '@/svgs';
+import { HeartIcon, RecipeLogoIcon } from '@/svgs';
 import BottomNavigation from '@/components/BottomNavigation';
+import { useEffect } from 'react';
 
 export default function Recipe() {
+  useEffect(() => {
+    window.ReactNativeWebView.postMessage({ type: 'isFullScreen', payload: false });
+  }, []);
+
   return (
     <main className="flex flex-col overflow-scroll pb-[5.375rem] pt-[3.75rem] scrollbar-hide">
       <div className="fixed top-0 z-50 h-[3.75rem] w-full max-w-[80rem] bg-bg px-[1.25rem] pt-[1rem]">
