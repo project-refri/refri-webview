@@ -1,17 +1,24 @@
 'use client';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { mockRecipe1 } from '@/mocks/mockRecipe';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { useQuery } from '@tanstack/react-query';
+import { getRecipeById } from '@/lib/api/recipe';
+import { LOADING_IMAGE } from '@/lib/constans';
+import ImageWithFallback from '@/components/ImageWithFallback';
 
 export default function RecipeDetail() {
   const pathname = usePathname().split('/').pop();
+  const { data: recipe } = useQuery(['recipe', pathname], () => getRecipeById(pathname!), {
+    enabled: pathname !== undefined,
+  });
 
   return (
     <main className="flex flex-col scrollbar-hide">
       <div className="relative h-[25rem] w-full">
-        <Image
-          src={mockRecipe1.thumbnail}
+        <ImageWithFallback
+          priority
+          src={recipe?.thumbnail}
           height={800}
           width={800}
           alt=""
@@ -20,18 +27,18 @@ export default function RecipeDetail() {
       </div>
 
       <div className="p-[1.25rem]">
-        <h1 className="font-spoqa-sans text-[1.625rem] font-bold text-sub-1">{mockRecipe1.name}</h1>
+        <h1 className="font-spoqa-sans text-[1.625rem] font-bold text-sub-1">{recipe?.name}</h1>
         <p className="mt-[.625rem] font-spoqa-sans text-[.875rem] text-sub-1">
-          {mockRecipe1.description}
+          {recipe?.description}
         </p>
       </div>
 
-      <div className="h-[.375rem] w-full bg-bg" />
+      <div className="h-[.375rem] w-full bg-brown opacity-10" />
 
       <div className="p-[1.25rem]">
         <h2 className="font-spoqa-sans text-[1.1875rem] font-bold text-sub-1">재료를 체크하세요</h2>
         <div className="mt-[1rem] flex flex-col">
-          {mockRecipe1.ingredient_requirements.map((ingredient, index) => (
+          {recipe?.ingredient_requirements.map((ingredient, index) => (
             <div
               key={index}
               className="flex h-[2.125rem] items-center justify-between border-b-[.0625rem] border-b-brown px-[.625rem] last:border-none"
@@ -47,21 +54,21 @@ export default function RecipeDetail() {
         </div>
       </div>
 
-      <div className="h-[.375rem] w-full bg-bg" />
+      <div className="h-[.375rem] w-full bg-brown opacity-10" />
 
       <div className="bg-bg p-[1.25rem]">
         <h2 className="font-spoqa-sans text-[1.1875rem] font-bold text-sub-1">이렇게 요리해요</h2>
         <div className="flex flex-col">
-          {mockRecipe1.recipe_steps.map((step, index) => (
+          {recipe?.recipe_steps.map((step, index) => (
             <div
               key={index}
               className="flex items-center gap-[1.5rem] border-b-[.0625rem] border-b-brown py-[.75rem] last:border-none"
             >
-              <Image
+              <ImageWithFallback
                 src={step.images[0]}
                 width={560}
                 height={432}
-                className="aspect-[70/54] w-[20%] object-cover"
+                className="aspect-[70/54] w-[20%] shrink-0 object-cover"
                 alt=""
               />
               <p className="font-spoqa-sans text-[.875rem] font-medium text-sub-1">
