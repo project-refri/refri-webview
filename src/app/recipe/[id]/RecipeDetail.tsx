@@ -116,7 +116,7 @@ const RecipeStepView = ({ open, setOpen, recipe }: RecipeStepViewProps) => {
   const [currentStep, setCurrentStep] = useState(0);
 
   return (
-    <div className="flex h-screen w-screen flex-col bg-[#F5F5F5] scrollbar-hide">
+    <div className="flex h-screen w-screen flex-col overflow-hidden bg-[#F5F5F5] scrollbar-hide">
       <div className="relative flex h-[3.75rem] items-center justify-center">
         <BackIcon
           className="absolute left-[1.25rem] h-[1.0625rem] w-[.5313rem]"
@@ -142,13 +142,13 @@ const RecipeStepView = ({ open, setOpen, recipe }: RecipeStepViewProps) => {
         enableMouseEvents
       >
         {recipe.recipe_steps.map((step, index) => (
-          <div key={index} className="flex h-full w-full flex-col">
+          <div key={index} className="flex h-full w-full flex-col py-4">
             <ImageWithFallback
               priority
               src={step.images[0]}
-              width={340}
-              height={440}
-              className="mt-[2.125rem] aspect-[340/440] w-[87%] self-end rounded-tl-[3.125rem] object-cover"
+              width={800}
+              height={800}
+              className="w-[87%] flex-1 self-end rounded-tl-[3.125rem] object-cover"
             />
 
             <div className="mt-[2.125rem] flex w-[87%] items-start gap-4 self-end pr-4">
@@ -163,9 +163,9 @@ const RecipeStepView = ({ open, setOpen, recipe }: RecipeStepViewProps) => {
         ))}
       </SwipeableViews>
 
-      <div className="h-[10rem] w-full rounded-[.3125rem] rounded-tl-[1.25rem] border-[.0625rem] border-brown bg-[#F1F1E7] px-[3.125rem] pt-[1.25rem]">
+      <div className="h-[8rem] w-full rounded-[.3125rem] rounded-tl-[1.25rem] border-[.0625rem] border-brown bg-[#F1F1E7] px-[3.125rem] pt-[1.25rem]">
         <p className="font-poppins text-[.8125rem] font-medium text-brown">How much?</p>
-        <div className="grid flex-1 grid-cols-2">
+        <div className="grid h-full grid-cols-2 overflow-y-scroll scrollbar-hide">
           {recipe.recipe_steps[currentStep].ingredients.map((ingredient, index) => (
             <div key={index} className="mt-2 flex gap-2">
               <p className="font-spoqa-sans text-[.6875rem] font-medium text-brown">
