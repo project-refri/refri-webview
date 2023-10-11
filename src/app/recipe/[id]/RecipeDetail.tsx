@@ -21,13 +21,13 @@ export default function RecipeDetail({ id, initialRecipe }: RecipeDetailProps) {
   useEffect(() => {
     if (window.ReactNativeWebView) {
       window.ReactNativeWebView.postMessage(
-        JSON.stringify({ type: 'isFullScreen', payload: true }),
+        JSON.stringify({ type: 'setSafeMode', payload: 'none' }),
       );
     }
     return () => {
       if (window.ReactNativeWebView) {
         window.ReactNativeWebView.postMessage(
-          JSON.stringify({ type: 'isFullScreen', payload: false }),
+          JSON.stringify({ type: 'setSafeMode', payload: 'none' }),
         );
       }
     };
@@ -129,6 +129,21 @@ interface RecipeStepViewProps {
 
 const RecipeStepView = ({ open, setOpen, recipe }: RecipeStepViewProps) => {
   const [currentStep, setCurrentStep] = useState(0);
+
+  useEffect(() => {
+    if (window.ReactNativeWebView) {
+      window.ReactNativeWebView.postMessage(
+        JSON.stringify({ type: 'setSafeMode', payload: 'top' }),
+      );
+    }
+    return () => {
+      if (window.ReactNativeWebView) {
+        window.ReactNativeWebView.postMessage(
+          JSON.stringify({ type: 'setSafeMode', payload: 'top' }),
+        );
+      }
+    };
+  }, []);
 
   return (
     <div className="flex h-screen w-screen flex-col overflow-hidden bg-[#F5F5F5] scrollbar-hide">

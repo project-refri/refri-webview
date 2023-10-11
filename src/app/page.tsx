@@ -11,7 +11,7 @@ export default function Home() {
   useEffect(() => {
     if (window.ReactNativeWebView) {
       window.ReactNativeWebView.postMessage(
-        JSON.stringify({ type: 'isFullScreen', payload: false }),
+        JSON.stringify({ type: 'setSafeMode', payload: 'all' }),
       );
     }
   }, []);
