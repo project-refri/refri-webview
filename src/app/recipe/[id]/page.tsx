@@ -1,11 +1,36 @@
 'use client';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useQuery } from '@tanstack/react-query';
 import { getRecipeById } from '@/lib/api/recipe';
-import { LOADING_IMAGE } from '@/lib/constans';
 import ImageWithFallback from '@/components/ImageWithFallback';
+
+import type { Metadata, ResolvingMetadata } from 'next';
+
+type Props = {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  const id = params.id;
+  const recipe = await getRecipeById(id);
+
+  const previousImages = (await parent).openGraph?.images || [];
+
+  return {
+    title: recipe.name,
+    description: recipe.description,
+    openGraph: {
+      title: recipe.name,
+      description: recipe.description,
+      images: [recipe.thumbnail, ...previousImages],
+    },
+  };
+}
 
 export default function RecipeDetail() {
   const pathname = usePathname().split('/').pop();
