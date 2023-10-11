@@ -1,5 +1,3 @@
-'use client';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { usePathname } from 'next/navigation';
 import { useQuery } from '@tanstack/react-query';
 import { getRecipeById } from '@/lib/api/recipe';

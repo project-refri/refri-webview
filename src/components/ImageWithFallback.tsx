@@ -1,3 +1,4 @@
+'use client';
 import React, { useEffect, useState } from 'react';
 import Image, { ImageProps } from 'next/image';
 import { FALLBACK_IMAGE, LOADING_IMAGE } from '@/lib/constans';
