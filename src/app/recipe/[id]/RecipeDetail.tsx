@@ -30,7 +30,7 @@ export default function RecipeDetail({ id, initialRecipe }: RecipeDetailProps) {
   return (
     <main className="flex flex-col scrollbar-hide">
       <div
-        className="absolute left-[1rem] top-[1rem] flex h-[1.875rem] w-[1.875rem] items-center justify-center rounded-full bg-white"
+        className="absolute left-[1rem] top-[2rem] flex h-[1.875rem] w-[1.875rem] items-center justify-center rounded-full bg-white"
         onClick={() => router.back()}
       >
         <BackIcon className="h-[1.0625rem] w-[.5313rem]" />
