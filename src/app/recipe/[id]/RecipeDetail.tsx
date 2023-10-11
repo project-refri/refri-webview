@@ -19,9 +19,17 @@ export default function RecipeDetail({ id, initialRecipe }: RecipeDetailProps) {
   const [recipeStepViewOpen, setRecipeStepViewOpen] = useState(false);
 
   useEffect(() => {
-    window.ReactNativeWebView.postMessage({ type: 'isFullScreen', payload: true });
+    if (window.ReactNativeWebView) {
+      window.ReactNativeWebView.postMessage(
+        JSON.stringify({ type: 'isFullScreen', payload: true }),
+      );
+    }
     return () => {
-      window.ReactNativeWebView.postMessage({ type: 'isFullScreen', payload: false });
+      if (window.ReactNativeWebView) {
+        window.ReactNativeWebView.postMessage(
+          JSON.stringify({ type: 'isFullScreen', payload: false }),
+        );
+      }
     };
   }, []);
 
@@ -125,10 +133,12 @@ const RecipeStepView = ({ open, setOpen, recipe }: RecipeStepViewProps) => {
   return (
     <div className="flex h-screen w-screen flex-col overflow-hidden bg-[#F5F5F5] scrollbar-hide">
       <div className="relative flex h-[3.75rem] items-center justify-center">
-        <BackIcon
-          className="absolute left-[1.25rem] h-[1.0625rem] w-[.5313rem]"
+        <div
+          className="absolute left-[1.25rem] flex h-[1.875rem] w-[1.875rem] items-center justify-center"
           onClick={() => setOpen(false)}
-        />
+        >
+          <BackIcon className="h-[1.0625rem] w-[.5313rem]" />
+        </div>
         <p className="w-[70%] truncate font-spoqa-sans text-[1.125rem] font-medium leading-[17px]">
           {recipe.name}
         </p>

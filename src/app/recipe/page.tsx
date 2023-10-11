@@ -4,10 +4,17 @@ import { mockHotRecipe, mockRecentRecipe } from '@/mocks/mockRecipe';
 import { HeartIcon, RecipeLogoIcon } from '@/svgs';
 import BottomNavigation from '@/components/BottomNavigation';
 import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function Recipe() {
+  const router = useRouter();
+
   useEffect(() => {
-    window.ReactNativeWebView.postMessage({ type: 'isFullScreen', payload: false });
+    if (window.ReactNativeWebView) {
+      window.ReactNativeWebView.postMessage(
+        JSON.stringify({ type: 'isFullScreen', payload: false }),
+      );
+    }
   }, []);
 
   return (
@@ -60,7 +67,11 @@ export default function Recipe() {
         </div>
         <div className="mt-4 grid w-full gap-[1rem] md:grid-cols-2">
           {mockRecentRecipe.map((recipe, index) => (
-            <div key={index} className="flex flex-col gap-[.7344rem] rounded-tl-[1rem]">
+            <div
+              key={index}
+              className="flex flex-col gap-[.7344rem] rounded-tl-[1rem]"
+              onClick={() => router.push('/recipe/651d245e6dcb8e1aff3d6a01')}
+            >
               <Image
                 src={recipe.thumbnail}
                 width={350}

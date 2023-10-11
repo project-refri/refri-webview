@@ -9,7 +9,11 @@ import { useEffect } from 'react';
 
 export default function Home() {
   useEffect(() => {
-    window.ReactNativeWebView.postMessage({ type: 'isFullScreen', payload: false });
+    if (window.ReactNativeWebView) {
+      window.ReactNativeWebView.postMessage(
+        JSON.stringify({ type: 'isFullScreen', payload: false }),
+      );
+    }
   }, []);
 
   return (
