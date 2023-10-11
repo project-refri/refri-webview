@@ -5,7 +5,7 @@ import { getRecipeById } from '@/lib/api/recipe';
 import { BackIcon } from '@/svgs';
 import { useQuery } from '@tanstack/react-query';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import SwipeableViews from 'react-swipeable-views';
 
 interface RecipeStepViewProps {
@@ -19,6 +19,24 @@ const RecipeStepView = ({ id, initialRecipe }: RecipeStepViewProps) => {
   });
   const router = useRouter();
   const [currentStep, setCurrentStep] = useState(0);
+
+  useEffect(() => {
+    if (window.ReactNativeWebView) {
+      window.ReactNativeWebView.postMessage(
+        JSON.stringify({ type: 'setSafeMode', payload: 'top' }),
+      );
+      window.ReactNativeWebView.postMessage(
+        JSON.stringify({ type: 'setTopBackground', payload: '#F5F5F5' }),
+      );
+    }
+    return () => {
+      if (window.ReactNativeWebView) {
+        window.ReactNativeWebView.postMessage(
+          JSON.stringify({ type: 'setTopBackground', payload: '#FFFFFF' }),
+        );
+      }
+    };
+  }, []);
 
   return (
     <main className="flex flex-col scrollbar-hide">
