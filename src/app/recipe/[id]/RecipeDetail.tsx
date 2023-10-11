@@ -24,13 +24,6 @@ export default function RecipeDetail({ id, initialRecipe }: RecipeDetailProps) {
         JSON.stringify({ type: 'setSafeMode', payload: 'none' }),
       );
     }
-    return () => {
-      if (window.ReactNativeWebView) {
-        window.ReactNativeWebView.postMessage(
-          JSON.stringify({ type: 'setSafeMode', payload: 'none' }),
-        );
-      }
-    };
   }, []);
 
   return (
@@ -135,11 +128,14 @@ const RecipeStepView = ({ open, setOpen, recipe }: RecipeStepViewProps) => {
       window.ReactNativeWebView.postMessage(
         JSON.stringify({ type: 'setSafeMode', payload: 'top' }),
       );
+      window.ReactNativeWebView.postMessage(
+        JSON.stringify({ type: 'setTopBackground', payload: '#F5F5F5' }),
+      );
     }
     return () => {
       if (window.ReactNativeWebView) {
         window.ReactNativeWebView.postMessage(
-          JSON.stringify({ type: 'setSafeMode', payload: 'top' }),
+          JSON.stringify({ type: 'setTopBackground', payload: '#FFFFFF' }),
         );
       }
     };
