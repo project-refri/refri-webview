@@ -1,3 +1,4 @@
+export { default as BackIcon } from './BackIcon';
 export { default as CommentIcon } from './CommentIcon';
 export { default as FridgeIcon } from './FridgeIcon';
 export { default as GoogleIcon } from './GoogleIcon';
