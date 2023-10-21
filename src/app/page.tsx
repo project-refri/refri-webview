@@ -39,7 +39,7 @@ export default function Home() {
             className="absolute left-0 top-0 z-0 h-full w-full opacity-50"
           />
           <div className="absolute left-0 top-0 z-10 flex h-full w-full flex-col justify-center gap-2 px-[2.5rem] text-left">
-            <h1 className="font-notoSans text-[1.5rem] font-bold text-[#EFEFE3]">
+            <h1 className="font-notoSans text-[1.5rem] font-semibold text-[#EFEFE3]">
               우리집에서 <br /> 마치 <span className="text-[#FFAE68]">연남동</span> <br />{' '}
               비건식당처럼
             </h1>
