@@ -23,9 +23,13 @@ export async function generateMetadata(
   const previousImages = (await parent).openGraph?.images || [];
 
   return {
-    title: '리프리 "' + searchParams.searchQuery + '" 검색 결과',
+    title: searchParams.searchQuery
+      ? '리프리 "' + searchParams.searchQuery + '" 검색 결과'
+      : '리프리 | 레시피 검색하기',
     openGraph: {
-      title: '리프리 "' + searchParams.searchQuery + '" 검색 결과',
+      title: searchParams.searchQuery
+        ? '리프리 "' + searchParams.searchQuery + '" 검색 결과'
+        : '리프리 | 레시피 검색하기',
       images: recipes.count
         ? [recipes.results[0].thumbnail, ...previousImages]
         : [...previousImages],
