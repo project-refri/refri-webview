@@ -83,7 +83,7 @@ function RecipeSearch({ searchQuery, sort }: Props) {
                 handleSearch({ searchQuery: inputRef.current!.value, sort });
               }
             }}
-            className="sticky top-0 h-[2.375rem] flex-1 rounded-[2.5rem] border-[.0938rem] border-sub-1 bg-transparent pl-4 font-spoqa-sans focus:border-[.125rem] focus:outline-none"
+            className="h-[2.375rem] min-w-[0] flex-1 rounded-[2.5rem] border-[.0938rem] border-sub-1 bg-transparent pl-4 font-spoqa-sans focus:border-[.125rem] focus:outline-none"
           />
           <SearchIcon
             className="h-[1.5rem] w-[1.5rem] shrink-0 cursor-pointer"
