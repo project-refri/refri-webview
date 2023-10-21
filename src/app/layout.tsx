@@ -6,6 +6,7 @@ import { DehydratedState } from '@tanstack/react-query';
 export const metadata: Metadata = {
   title: '리프리 | refri',
   description: '당신의 냉장고 리프리가 정리할게요.',
+  icons: '/favicon.ico',
 };
 
 export interface AppProps {

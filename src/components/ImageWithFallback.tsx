@@ -18,7 +18,9 @@ const ImageWithFallback = ({ src, alt, ...rest }: ImageWithFallbackProps) => {
   return (
     <Image
       {...rest}
-      src={imgSrc || LOADING_IMAGE}
+      src={
+        imgSrc ? (imgSrc.length > 0 && imgSrc[0] === 'h' ? imgSrc : FALLBACK_IMAGE) : LOADING_IMAGE
+      }
       onError={() => {
         setImgSrc(FALLBACK_IMAGE);
       }}

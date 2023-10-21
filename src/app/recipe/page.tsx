@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { mockHotRecipe, mockRecentRecipe } from '@/mocks/mockRecipe';
-import { HeartIcon, RecipeLogoIcon } from '@/svgs';
+import { HeartIcon, RecipeLogoIcon, SearchIcon } from '@/svgs';
 import BottomNavigation from '@/components/BottomNavigation';
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
@@ -19,8 +19,12 @@ export default function Recipe() {
 
   return (
     <main className="flex flex-col overflow-scroll pb-[5.375rem] pt-[3.75rem] scrollbar-hide">
-      <div className="fixed top-0 z-50 h-[3.75rem] w-full max-w-[80rem] bg-bg px-[1.25rem] pt-[1rem]">
+      <div className="fixed top-0 z-50 flex h-[3.75rem] w-full max-w-[80rem] justify-between bg-bg px-[1.25rem] pt-[1rem]">
         <RecipeLogoIcon className="h-[1.25rem] w-[5rem]" color="#242325" />
+        <SearchIcon
+          className="h-[1.3125rem] w-[1.3125rem] cursor-pointer"
+          onClick={() => router.push('/search')}
+        />
       </div>
 
       <div className="px-[1.25rem] py-[1.5625rem]">

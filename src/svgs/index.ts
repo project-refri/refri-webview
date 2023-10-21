@@ -12,3 +12,5 @@ export { default as ProfileIcon } from './ProfileIcon';
 export { default as RecipeIcon } from './RecipeIcon';
 export { default as RecipeLogoIcon } from './RecipeLogoIcon';
 export { default as SearchIcon } from './SearchIcon';
+export { default as ArrowDownIcon } from './ArrowDownIcon';
+export { default as SortIcon } from './SortIcon';

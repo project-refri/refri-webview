@@ -27,7 +27,5 @@ export async function generateMetadata(
 }
 
 export default async function Page({ params }: Props) {
-  const initialRecipe = await getRecipeById(params.id);
-
-  return <RecipeDetail id={params.id} initialRecipe={initialRecipe} />;
+  return <RecipeDetail id={params.id} />;
 }

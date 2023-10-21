@@ -26,3 +26,10 @@ type Recipe = {
   created_at: string;
   updated_at: string;
 };
+
+type SearchResult = {
+  results: Recipe[];
+  page: number;
+  count: number;
+  has_next: boolean;
+};

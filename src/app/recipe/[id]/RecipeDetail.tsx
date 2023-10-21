@@ -10,13 +10,10 @@ import RecipeStepView from './step/RecipeStepView';
 
 interface RecipeDetailProps {
   id: string;
-  initialRecipe: Recipe;
 }
 
-export default function RecipeDetail({ id, initialRecipe }: RecipeDetailProps) {
-  const { data: recipe } = useQuery(['recipe', id], () => getRecipeById(id), {
-    initialData: initialRecipe,
-  });
+export default function RecipeDetail({ id }: RecipeDetailProps) {
+  const { data: recipe } = useQuery(['recipe', id], () => getRecipeById(id));
   const router = useRouter();
 
   useEffect(() => {
