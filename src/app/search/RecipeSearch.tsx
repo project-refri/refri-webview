@@ -44,7 +44,13 @@ function RecipeSearch({ searchQuery, sort }: Props) {
     sort?: SearchParams['sort'] | null;
   }) => {
     if (!searchQuery && !sort) router.push('/search');
-    else router.push(`/search?${qs.stringify({ searchQuery, sort })}`);
+    else if (!searchQuery) {
+      router.push(`/search?${qs.stringify({ sort })}`);
+    } else if (!sort) {
+      router.push(`/search?${qs.stringify({ searchQuery })}`);
+    } else {
+      router.push(`/search?${qs.stringify({ searchQuery, sort })}`);
+    }
   };
 
   useEffect(() => {

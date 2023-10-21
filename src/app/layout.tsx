@@ -4,6 +4,7 @@ import Providers from './provider';
 import { DehydratedState } from '@tanstack/react-query';
 import { Toaster } from 'react-hot-toast';
 import { Noto_Sans_KR } from 'next/font/google';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: '리프리 | refri',
@@ -23,6 +24,16 @@ const notoSansKR = Noto_Sans_KR({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko" className="h-fit bg-[#deded5]">
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-VYZXM8MDLN" />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'G-VYZXM8MDLN');
+        `}
+      </Script>
       <body
         className={`${notoSansKR.variable} mx-auto h-fit max-w-[80rem] bg-white scrollbar-hide`}
       >
