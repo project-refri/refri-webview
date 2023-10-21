@@ -42,8 +42,8 @@ export default function RecipeDetail({ id }: RecipeDetailProps) {
       />
 
       <div className="p-[1.25rem]">
-        <h1 className="font-spoqa-sans text-[1.625rem] font-bold text-sub-1">{recipe?.name}</h1>
-        <p className="mt-[.625rem] font-spoqa-sans text-[.875rem] text-sub-1">
+        <h1 className="font-notoSans text-[1.625rem] font-bold text-sub-1">{recipe?.name}</h1>
+        <p className="mt-[.625rem] font-notoSans text-[.875rem] text-sub-1">
           {recipe?.description}
         </p>
       </div>
@@ -52,9 +52,7 @@ export default function RecipeDetail({ id }: RecipeDetailProps) {
 
       <div className="p-[1.25rem]">
         <div className="flex items-center justify-between">
-          <h2 className="font-spoqa-sans text-[1.1875rem] font-bold text-sub-1">
-            재료를 체크하세요
-          </h2>
+          <h2 className="font-notoSans text-[1.1875rem] font-bold text-sub-1">재료를 체크하세요</h2>
           <button className="cursor-pointer rounded-md border-[.0625rem] border-[#CDC1B2] px-2 text-sub-1">
             계량 안내
           </button>
@@ -65,10 +63,10 @@ export default function RecipeDetail({ id }: RecipeDetailProps) {
               key={index}
               className="flex h-[2.125rem] items-center justify-between border-b-[.0625rem] border-b-brown px-[.625rem] last:border-none"
             >
-              <p className="font-spoqa-sans text-[.875rem] font-medium text-sub-1">
+              <p className="font-notoSans text-[.875rem] font-medium text-sub-1">
                 {ingredient.name}
               </p>
-              <p className="font-spoqa-sans text-[.875rem] font-medium text-sub-1">
+              <p className="font-notoSans text-[.875rem] font-medium text-sub-1">
                 {ingredient.amount}
               </p>
             </div>
@@ -80,7 +78,7 @@ export default function RecipeDetail({ id }: RecipeDetailProps) {
 
       <div className="bg-bg p-[1.25rem]">
         <div className="flex items-center justify-between">
-          <h2 className="font-spoqa-sans text-[1.1875rem] font-bold text-sub-1">이렇게 요리해요</h2>
+          <h2 className="font-notoSans text-[1.1875rem] font-bold text-sub-1">이렇게 요리해요</h2>
           <button
             className="cursor-pointer rounded-md border-[.0625rem] border-[#CDC1B2] px-2 text-sub-1"
             onClick={() => router.push(`${id}/step`)}
@@ -100,7 +98,7 @@ export default function RecipeDetail({ id }: RecipeDetailProps) {
                 height={432}
                 className="aspect-[70/54] w-[20%] shrink-0 object-cover"
               />
-              <p className="font-spoqa-sans text-[.875rem] font-medium text-sub-1">
+              <p className="font-notoSans text-[.875rem] font-medium text-sub-1">
                 {step.description}
               </p>
             </div>

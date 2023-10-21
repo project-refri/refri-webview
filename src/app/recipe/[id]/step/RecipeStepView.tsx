@@ -48,17 +48,15 @@ const RecipeStepView = ({ id, initialRecipe }: RecipeStepViewProps) => {
           >
             <BackIcon className="h-[1.0625rem] w-[.5313rem]" />
           </div>
-          <p className="w-[70%] truncate font-spoqa-sans text-[1.125rem] font-medium leading-[17px]">
+          <p className="w-[70%] truncate font-notoSans text-[1.125rem] font-medium leading-[17px]">
             {recipe.name}
           </p>
-          <div className="absolute bottom-0 flex w-full">
-            {Array.from({ length: recipe.recipe_steps.length }).map((_, index) => (
-              <div
-                key={index}
-                className={`h-[.125rem] flex-1 ${currentStep >= index && 'bg-brown'}`}
-              />
-            ))}
-          </div>
+          <div
+            className="absolute bottom-0 left-0 flex h-[.125rem] bg-brown transition-[0.5s]"
+            style={{
+              width: `calc(100% * (${currentStep} + 1) / ${recipe.recipe_steps.length}`,
+            }}
+          ></div>
         </div>
         <SwipeableViews
           style={{ flex: 1 }}
@@ -78,10 +76,10 @@ const RecipeStepView = ({ id, initialRecipe }: RecipeStepViewProps) => {
               />
 
               <div className="mt-[2.125rem] flex w-[87%] items-start gap-4 self-end pr-4">
-                <p className="font-poppins text-[1.875rem] font-medium leading-[2rem] text-brown">
+                <p className="font-notoSans text-[1.875rem] font-medium leading-[2rem] text-brown">
                   {currentStep + 1}
                 </p>
-                <p className="font-spoqa-sans text-[1rem] font-medium leading-[1.625rem] text-sub-1">
+                <p className="font-notoSans text-[1rem] font-medium leading-[1.625rem] text-sub-1">
                   {step.description}
                 </p>
               </div>
@@ -90,14 +88,14 @@ const RecipeStepView = ({ id, initialRecipe }: RecipeStepViewProps) => {
         </SwipeableViews>
 
         <div className="h-[8rem] w-full rounded-[.3125rem] rounded-tl-[1.25rem] border-[.0625rem] border-brown bg-[#F1F1E7] px-[3.125rem] pt-[1.25rem]">
-          <p className="font-poppins text-[.8125rem] font-medium text-brown">How much?</p>
-          <div className="grid h-full grid-cols-2 overflow-y-scroll scrollbar-hide">
+          <p className="font-notoSans text-[.8125rem] font-medium text-brown">How much?</p>
+          <div className="mt-2 grid grid-cols-2 gap-1 overflow-y-scroll scrollbar-hide">
             {recipe.recipe_steps[currentStep].ingredients.map((ingredient, index) => (
-              <div key={index} className="mt-2 flex gap-2">
-                <p className="font-spoqa-sans text-[.6875rem] font-medium text-brown">
+              <div key={index} className="flex gap-2">
+                <p className="shrink-0 font-notoSans text-[.6875rem] font-medium text-brown">
                   {ingredient.name}
                 </p>
-                <p className="font-spoqa-sans text-[.6875rem] font-medium text-brown">
+                <p className="font-notoSans text-[.6875rem] font-medium text-brown">
                   {ingredient.amount}
                 </p>
               </div>

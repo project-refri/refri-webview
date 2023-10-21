@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
 function Providers({ children }: React.PropsWithChildren) {
   const [client] = React.useState(
@@ -15,7 +16,13 @@ function Providers({ children }: React.PropsWithChildren) {
     }),
   );
 
-  return <QueryClientProvider client={client}>{children}</QueryClientProvider>;
+  return (
+    <QueryClientProvider client={client}>
+      <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!}>
+        {children}
+      </GoogleOAuthProvider>
+    </QueryClientProvider>
+  );
 }
 
 export default Providers;

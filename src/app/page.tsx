@@ -21,8 +21,8 @@ export default function Home() {
 
   return (
     <main className="flex flex-col overflow-scroll pb-[5.375rem] pt-[3.75rem] scrollbar-hide">
-      <div className="fixed top-0 z-50 h-[3.75rem] w-full max-w-[80rem] bg-bg px-[1.25rem] pt-[1rem]">
-        <Logo className="h-[1.25rem] w-[5rem]" color="#242325" />
+      <div className="fixed top-0 z-50 flex h-[3.75rem] w-full max-w-[80rem] justify-between bg-bg px-[1.25rem] pt-[1rem]">
+        <Logo className="h-[1.25rem]" color="#242325" />
         <SearchIcon
           className="h-[1.3125rem] w-[1.3125rem] cursor-pointer"
           onClick={() => router.push('/search')}
@@ -39,11 +39,11 @@ export default function Home() {
             className="absolute left-0 top-0 z-0 h-full w-full opacity-50"
           />
           <div className="absolute left-0 top-0 z-10 flex h-full w-full flex-col justify-center gap-2 px-[2.5rem] text-left">
-            <h1 className="font-spoqa-sans text-[1.5rem] font-bold text-[#EFEFE3]">
+            <h1 className="font-notoSans text-[1.5rem] font-bold text-[#EFEFE3]">
               우리집에서 <br /> 마치 <span className="text-[#FFAE68]">연남동</span> <br />{' '}
               비건식당처럼
             </h1>
-            <p className="font-spoqa-sans text-[.75rem] font-medium text-[#EFEFE3]">
+            <p className="font-notoSans text-[.75rem] font-medium text-[#EFEFE3]">
               트렌디한 플레이팅으로 <br />
               완성하는 건강한 미식 레시피
             </p>
@@ -58,11 +58,11 @@ export default function Home() {
             className="absolute left-0 top-0 z-0 h-full w-full opacity-50"
           />
           <div className="absolute left-0 top-0 z-10 flex h-full w-full flex-col justify-center gap-2 px-[2.5rem] text-left">
-            <h1 className="font-spoqa-sans text-[1.5rem] font-bold text-[#EFEFE3]">
+            <h1 className="font-notoSans text-[1.5rem] font-bold text-[#EFEFE3]">
               우리집에서 <br /> 마치 <span className="text-[#FFAE68]">연남동</span> <br />{' '}
               비건식당처럼
             </h1>
-            <p className="font-spoqa-sans text-[.75rem] font-medium text-[#EFEFE3]">
+            <p className="font-notoSans text-[.75rem] font-medium text-[#EFEFE3]">
               트렌디한 플레이팅으로 <br />
               완성하는 건강한 미식 레시피
             </p>
@@ -72,10 +72,10 @@ export default function Home() {
 
       <div className="px-[1.25rem] py-[1.5625rem]">
         <div className="flex items-center justify-between">
-          <h1 className="font-spoqa-sans text-[1.1875rem] font-bold text-sub-1">
+          <h1 className="font-notoSans text-[1.1875rem] font-bold text-sub-1">
             이번달 인기 레시피 TOP6
           </h1>
-          <p className="cursor-pointer font-spoqa-sans text-[.75rem] font-medium text-brown">
+          <p className="cursor-pointer font-notoSans text-[.75rem] font-medium text-brown">
             전체보기
           </p>
         </div>
@@ -94,14 +94,14 @@ export default function Home() {
               />
               <div className="flex flex-1 flex-col">
                 <div className="flex flex-1">
-                  <p className="w-[1.75rem] font-poppins text-[1.1875rem] font-medium leading-[1.5rem] text-brown">
+                  <p className="w-[1.75rem] font-notoSans text-[1.1875rem] font-medium leading-[1.5rem] text-brown">
                     {index + 1}
                   </p>
                   <div className="flex flex-col justify-between">
-                    <h2 className="font-spoqa-sans text-[.875rem] font-medium leading-[1.3125rem] text-sub-1">
+                    <h2 className="font-notoSans text-[.875rem] font-medium leading-[1.3125rem] text-sub-1">
                       {recipe.name}
                     </h2>
-                    <p className="font-spoqa-sans text-[.625rem] leading-[1.5rem] text-brown">
+                    <p className="font-notoSans text-[.625rem] leading-[1.5rem] text-brown">
                       {recipe.views} views
                     </p>
                   </div>
@@ -115,10 +115,10 @@ export default function Home() {
       <div className="h-[.375rem] w-full bg-bg" />
       <div className="px-[1.25rem] py-[1.5625rem]">
         <div className="flex items-center justify-between">
-          <h1 className="font-spoqa-sans text-[1.1875rem] font-bold text-sub-1">
+          <h1 className="font-notoSans text-[1.1875rem] font-bold text-sub-1">
             최근 업로드된 레시피
           </h1>
-          <p className="cursor-pointer font-spoqa-sans text-[.75rem] font-medium text-brown">
+          <p className="cursor-pointer font-notoSans text-[.75rem] font-medium text-brown">
             전체보기
           </p>
         </div>
@@ -134,17 +134,17 @@ export default function Home() {
               />
               <div className="flex flex-col gap-1">
                 <div className="flex items-center justify-between">
-                  <h2 className="font-spoqa-sans text-[.75rem] font-medium text-sub-1">
+                  <h2 className="font-notoSans text-[.75rem] font-medium text-sub-1">
                     {recipe.name}
                   </h2>
-                  <p className="font-spoqa-sans text-[.625rem] text-brown opacity-50">
+                  <p className="font-notoSans text-[.625rem] text-brown opacity-50">
                     {recipe.views} views
                   </p>
                 </div>
                 <div className="flex items-center">
-                  <p className="font-spoqa-sans text-[.625rem] text-brown">{recipe.owner?.name}</p>
+                  <p className="font-notoSans text-[.625rem] text-brown">{recipe.owner?.name}</p>
                   <HeartIcon className="ml-4 h-[.6119rem] w-[.6875rem]" />
-                  <p className="ml-1 font-poppins text-[.75rem] font-light text-brown">
+                  <p className="ml-1 font-notoSans text-[.75rem] font-light text-brown">
                     {recipe.likes}
                   </p>
                 </div>

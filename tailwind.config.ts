@@ -19,8 +19,7 @@ const config: Config = {
         brown: '#9A8266',
       },
       fontFamily: {
-        poppins: ['poppins', 'sans-serif'],
-        'spoqa-sans': ['spoqa-sans', 'sans-serif'],
+        notoSans: ['var(--font-noto-sans-kr)'],
       },
       boxShadow: {
         'shadow-1': '.125rem .125rem .5rem rgba(0, 0, 0, 0.05)',

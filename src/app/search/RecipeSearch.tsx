@@ -66,8 +66,11 @@ function RecipeSearch({ searchQuery, sort }: Props) {
       {/* 헤더 */}
       <div className="fixed top-0 z-50 flex h-[6.5rem] w-full max-w-[80rem] flex-col items-center justify-between bg-bg px-[1.25rem] pb-[.625rem] pt-[1rem]">
         <p
-          className="cursor-pointer font-spoqa-sans text-[1rem] font-bold text-sub-1"
-          onClick={() => handleSearch({ searchQuery: null, sort: null })}
+          className="cursor-pointer font-notoSans text-[1rem] font-bold text-sub-1"
+          onClick={() => {
+            handleSearch({ searchQuery: null, sort: null });
+            inputRef.current!.value = '';
+          }}
         >
           레시피 찾기
         </p>
@@ -83,7 +86,7 @@ function RecipeSearch({ searchQuery, sort }: Props) {
                 handleSearch({ searchQuery: inputRef.current!.value, sort });
               }
             }}
-            className="h-[2.375rem] min-w-[0] flex-1 rounded-[2.5rem] border-[.0938rem] border-sub-1 bg-transparent pl-4 font-spoqa-sans focus:border-[.125rem] focus:outline-none"
+            className="h-[2.375rem] min-w-[0] flex-1 rounded-[2.5rem] border-[.0938rem] border-sub-1 bg-transparent pl-4 font-notoSans focus:border-[.125rem] focus:outline-none"
           />
           <SearchIcon
             className="h-[1.5rem] w-[1.5rem] shrink-0 cursor-pointer"
@@ -96,7 +99,7 @@ function RecipeSearch({ searchQuery, sort }: Props) {
       <div className="p-[1.25rem]">
         <div className="flex w-full items-center pb-[.625rem]">
           {searchQuery && (
-            <p className="font-spoqa-sans text-[.75rem] text-sub-1">
+            <p className="font-notoSans text-[.75rem] text-sub-1">
               <span className="font-bold">&quot;{searchQuery}&quot;</span> 검색 결과
             </p>
           )}
@@ -105,7 +108,7 @@ function RecipeSearch({ searchQuery, sort }: Props) {
             onClick={() => setOpenFilter(!openFilter)}
           >
             <SortIcon className="w-[.75rem]" />
-            <p className="font-spoqa-sans text-[.6875rem] text-sub-1">
+            <p className="font-notoSans text-[.6875rem] text-sub-1">
               {match(sort)
                 .with('RELEVANCE', () => '관련 순')
                 .with('CREATED_AT', () => '최신 순')
@@ -118,7 +121,7 @@ function RecipeSearch({ searchQuery, sort }: Props) {
                 ref={clickAwayRef}
               >
                 <div
-                  className="cursor-pointer border-b-[.0625rem] border-sub-3 px-[1.5625rem] py-1 font-spoqa-sans text-[.75rem] text-sub-1 last:border-none"
+                  className="cursor-pointer border-b-[.0625rem] border-sub-3 px-[1.5625rem] py-1 font-notoSans text-[.75rem] text-sub-1 last:border-none"
                   onClick={() => {
                     handleSearch({ searchQuery, sort: 'RELEVANCE' });
                   }}
@@ -126,7 +129,7 @@ function RecipeSearch({ searchQuery, sort }: Props) {
                   관련 순
                 </div>
                 <div
-                  className="cursor-pointer border-b-[.0625rem] border-sub-3 px-[1.5625rem] py-1 font-spoqa-sans text-[.75rem] text-sub-1 last:border-none"
+                  className="cursor-pointer border-b-[.0625rem] border-sub-3 px-[1.5625rem] py-1 font-notoSans text-[.75rem] text-sub-1 last:border-none"
                   onClick={() => {
                     handleSearch({ searchQuery, sort: 'CREATED_AT' });
                   }}
@@ -152,7 +155,7 @@ function RecipeSearch({ searchQuery, sort }: Props) {
                   width={200}
                   className="aspect-[170/130] w-full rounded-tl-[1rem] rounded-tr-[.3125rem] object-cover"
                 />
-                <p className="mx-[.9375rem] my-[.625rem] line-clamp-2 h-[2.25rem] font-spoqa-sans text-[.75rem] font-medium text-sub-1">
+                <p className="mx-[.9375rem] my-[.625rem] line-clamp-2 h-[2.25rem] font-notoSans text-[.75rem] font-medium text-sub-1">
                   {recipe.name}
                 </p>
               </div>
