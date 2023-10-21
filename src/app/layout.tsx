@@ -24,16 +24,27 @@ const notoSansKR = Noto_Sans_KR({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko" className="h-fit bg-[#deded5]">
-      <Script src="https://www.googletagmanager.com/gtag/js?id=G-VYZXM8MDLN" />
-      <Script id="google-analytics">
-        {`
+      <head>
+        <meta
+          name="google-site-verification"
+          content="yvx2TJk89biz8L00cpnli1OUcNu9mH4qdl29e1-qM0U"
+        />
+      </head>
+      {process.env.NODE_ENV === 'production' && (
+        <>
+          <Script src="https://www.googletagmanager.com/gtag/js?id=G-VYZXM8MDLN" />
+          <Script id="google-analytics">
+            {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
  
           gtag('config', 'G-VYZXM8MDLN');
         `}
-      </Script>
+          </Script>
+        </>
+      )}
+
       <body
         className={`${notoSansKR.variable} mx-auto h-fit max-w-[80rem] bg-white scrollbar-hide`}
       >
