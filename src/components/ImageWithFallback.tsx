@@ -25,6 +25,7 @@ const ImageWithFallback = ({ src, alt, ...rest }: ImageWithFallbackProps) => {
         setImgSrc(FALLBACK_IMAGE);
       }}
       alt={alt || 'Image'}
+      unoptimized
     />
   );
 };
