@@ -16,7 +16,7 @@ export async function generateMetadata(
   const recipes = await searchRecipes({
     searchQuery: searchParams.searchQuery,
     page: 1,
-    limit: 10,
+    limit: 1,
     sort: searchParams.sort,
   });
 
