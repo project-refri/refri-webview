@@ -5,8 +5,7 @@ import { getRecipeById } from '@/lib/api/recipe';
 import { BackIcon } from '@/svgs';
 import { useQuery } from '@tanstack/react-query';
 import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
-import RecipeStepView from './step/RecipeStepView';
+import { useEffect } from 'react';
 
 interface RecipeDetailProps {
   id: string;

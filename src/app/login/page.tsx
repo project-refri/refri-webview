@@ -5,13 +5,30 @@ import { useGoogleLogin } from '@react-oauth/google';
 import KakaoLogin from 'react-kakao-login';
 import * as AuthAPI from '../../lib/api/auth';
 import toast from 'react-hot-toast';
+import { useGlobalStore } from '../store';
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
 export default function Login() {
+  const [isAuth, setState] = useGlobalStore((state) => [state.isAuth, state.setState]);
+  const router = useRouter();
+
+  const handleLogin = async (response: AuthAPI.OAuthResponse) => {
+    if (response.is_exist) {
+      setState('isAuth', true);
+      setState('sessionToken', response.sesstion_token);
+      setState('user', response.user);
+    } else {
+      setState('registerToken', response.register_token);
+      router.push('/register');
+    }
+  };
+
   const handleGoogleLogin = useGoogleLogin({
     onSuccess: async (res) => {
       try {
         const response = await AuthAPI.googleLogin(res.access_token);
-        console.log(response);
+        handleLogin(response);
       } catch (e) {
         toast.error('에러가 발생했습니다.');
       }
@@ -21,11 +38,17 @@ export default function Login() {
   const handleKakaoLogin = async (access_token: string) => {
     try {
       const response = await AuthAPI.kakaoLogin(access_token);
-      console.log(response);
+      handleLogin(response);
     } catch (e) {
       toast.error('에러가 발생했습니다.');
     }
   };
+
+  useEffect(() => {
+    if (isAuth) {
+      router.push('/');
+    }
+  }, [isAuth]);
 
   return (
     <div className="flex h-screen flex-col items-center justify-center gap-[15.125rem] bg-sub-1">

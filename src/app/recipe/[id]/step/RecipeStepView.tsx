@@ -87,7 +87,7 @@ const RecipeStepView = ({ id, initialRecipe }: RecipeStepViewProps) => {
           ))}
         </SwipeableViews>
 
-        <div className="h-[8rem] w-full rounded-[.3125rem] rounded-tl-[1.25rem] border-[.0625rem] border-brown bg-[#F1F1E7] px-[3.125rem] pt-[1.25rem]">
+        {/* <div className="h-[8rem] w-full rounded-[.3125rem] rounded-tl-[1.25rem] border-[.0625rem] border-brown bg-[#F1F1E7] px-[3.125rem] pt-[1.25rem]">
           <p className="font-notoSans text-[.8125rem] font-medium text-brown">How much?</p>
           <div className="mt-2 grid grid-cols-2 gap-1 overflow-y-scroll scrollbar-hide">
             {recipe.recipe_steps[currentStep].ingredients.map((ingredient, index) => (
@@ -101,7 +101,7 @@ const RecipeStepView = ({ id, initialRecipe }: RecipeStepViewProps) => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </main>
   );

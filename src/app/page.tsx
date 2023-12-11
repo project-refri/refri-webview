@@ -142,7 +142,9 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="flex items-center">
-                  <p className="font-notoSans text-[.625rem] text-brown">{recipe.owner?.name}</p>
+                  <p className="font-notoSans text-[.625rem] text-brown">
+                    {recipe.owner?.username}
+                  </p>
                   <HeartIcon className="ml-4 h-[.6119rem] w-[.6875rem]" />
                   <p className="ml-1 font-notoSans text-[.75rem] font-light text-brown">
                     {recipe.likes}

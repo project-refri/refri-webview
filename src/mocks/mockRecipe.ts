@@ -5,8 +5,8 @@ export const mockHotRecipe: Pick<Recipe, 'name' | 'views' | 'thumbnail' | 'owner
     thumbnail:
       'https://images.unsplash.com/photo-1524903703642-0a6a52e5d24d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
     owner: {
-      name: '김프리',
-      profileImage: '/img/profile_1.png',
+      username: '김프리',
+      thumbnail: '/img/profile_1.png',
     },
   },
   {
@@ -15,8 +15,8 @@ export const mockHotRecipe: Pick<Recipe, 'name' | 'views' | 'thumbnail' | 'owner
     thumbnail:
       'https://images.unsplash.com/photo-1483918793747-5adbf82956c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
     owner: {
-      name: '김프리',
-      profileImage: '/img/profile_1.png',
+      username: '김프리',
+      thumbnail: '/img/profile_1.png',
     },
   },
   {
@@ -25,8 +25,8 @@ export const mockHotRecipe: Pick<Recipe, 'name' | 'views' | 'thumbnail' | 'owner
     thumbnail:
       'https://images.unsplash.com/photo-1510629954389-c1e0da47d414?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE5fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60',
     owner: {
-      name: '김프리',
-      profileImage: '/img/profile_1.png',
+      username: '김프리',
+      thumbnail: '/img/profile_1.png',
     },
   },
   {
@@ -35,8 +35,8 @@ export const mockHotRecipe: Pick<Recipe, 'name' | 'views' | 'thumbnail' | 'owner
     thumbnail:
       'https://images.unsplash.com/photo-1485962093642-5f4386e84429?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEyfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60',
     owner: {
-      name: '김프리',
-      profileImage: '/img/profile_1.png',
+      username: '김프리',
+      thumbnail: '/img/profile_1.png',
     },
   },
   {
@@ -45,8 +45,8 @@ export const mockHotRecipe: Pick<Recipe, 'name' | 'views' | 'thumbnail' | 'owner
     thumbnail:
       'https://plus.unsplash.com/premium_photo-1669687759556-ce3c1033fd20?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE2fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60',
     owner: {
-      name: '김프리',
-      profileImage: '/img/profile_1.png',
+      username: '김프리',
+      thumbnail: '/img/profile_1.png',
     },
   },
   {
@@ -55,8 +55,8 @@ export const mockHotRecipe: Pick<Recipe, 'name' | 'views' | 'thumbnail' | 'owner
     thumbnail:
       'https://plus.unsplash.com/premium_photo-1672419800149-d04c372c5113?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDh8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
     owner: {
-      name: '김프리',
-      profileImage: '/img/profile_1.png',
+      username: '김프리',
+      thumbnail: '/img/profile_1.png',
     },
   },
 ];
