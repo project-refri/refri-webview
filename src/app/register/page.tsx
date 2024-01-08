@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useGlobalStore } from '../store';
 import * as AuthApi from '../../lib/api/auth';
 import { useRouter } from 'next/navigation';
@@ -15,6 +15,7 @@ const RegisterPage = () => {
   ]);
   const router = useRouter();
   const [username, setUsername] = useState(getRandomName());
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleRegister = async () => {
     if (!registerToken) return;
@@ -30,11 +31,11 @@ const RegisterPage = () => {
     }
   };
 
-  useEffect(() => {
-    if (!registerToken) {
-      router.push('/login');
-    }
-  }, [registerToken]);
+  // useEffect(() => {
+  //   if (!registerToken) {
+  //     router.push('/login');
+  //   }
+  // }, [registerToken]);
 
   return (
     <div className="flex h-screen w-full flex-col items-center justify-center px-8">
@@ -47,6 +48,7 @@ const RegisterPage = () => {
       <div className="mt-[4rem] flex h-[2.5rem] w-[20.125rem] gap-[15px] ">
         <input
           type="text"
+          ref={inputRef}
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           className="grow border-b-2 border-black pl-[0.8125rem] text-[1.4rem] text-sub-2 outline-none"
@@ -54,7 +56,10 @@ const RegisterPage = () => {
         <BackIcon
           color="#242325"
           className="w-[1rem] cursor-pointer"
-          onClick={() => setUsername('')}
+          onClick={() => {
+            setUsername('');
+            inputRef.current?.focus();
+          }}
         />
       </div>
       <button
