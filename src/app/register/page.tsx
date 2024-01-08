@@ -6,6 +6,7 @@ import * as AuthApi from '../../lib/api/auth';
 import { useRouter } from 'next/navigation';
 import { Logo } from '@/svgs';
 import toast from 'react-hot-toast';
+import getRandomName from '@/lib/getRandomName';
 
 const RegisterPage = () => {
   const [registerToken, setState] = useGlobalStore((state) => [
@@ -13,8 +14,7 @@ const RegisterPage = () => {
     state.setState,
   ]);
   const router = useRouter();
-
-  const [username, setUsername] = useState('');
+  const [username, setUsername] = useState(getRandomName());
 
   const handleRegister = async () => {
     if (!registerToken) return;
@@ -48,8 +48,7 @@ const RegisterPage = () => {
         type="text"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
-        autoFocus
-        className="mt-[4rem] h-[2.5rem] w-[20.125rem] border-b-2 border-black pl-[0.8125rem] text-[1.2rem] outline-none"
+        className="outline-non mt-[4rem] h-[2.5rem] w-[20.125rem] border-b-2 border-black pl-[0.8125rem] text-[1.4rem] text-sub-2 outline-none"
       />
       <button
         onClick={handleRegister}
