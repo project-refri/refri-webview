@@ -37,25 +37,24 @@ const RegisterPage = () => {
   }, [registerToken]);
 
   return (
-    <div className="flex h-screen w-full flex-col justify-center px-8">
-      <Logo
-        color="#242325"
-        className="absolute left-[50%] top-[1.625rem] w-[10rem] translate-x-[-50%]"
-      />
-      <h1 className="text-[1.4rem] font-medium">
-        <span className="text-point">이름</span>을 입력해주세요
-      </h1>
+    <div className="flex h-screen w-full flex-col items-center justify-center px-8">
+      <Logo color="#242325" className="mb-24 w-[10rem]" />
+      <h1 className="text-[1.4rem] font-medium">처음 오셨군요!</h1>
+      <p className="flex items-center ">
+        <Logo color="#FD7109" className="mr-[0.25rem] inline w-[4rem]" />
+        <span className="text-[1.4rem] font-medium">에서 사용할 이름을 알려주세요</span>
+      </p>
       <input
         type="text"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
         autoFocus
-        className="mt-[4rem] h-[2.5rem] w-full border-b-2 border-black text-[1.2rem]"
+        className="mt-[4rem] h-[2.5rem] w-[20.125rem] border-b-2 border-black pl-[0.8125rem] text-[1.2rem] outline-none"
       />
       <button
         onClick={handleRegister}
         disabled={!username}
-        className="mt-8 h-[3rem] w-full rounded-md bg-point text-[1.2rem] text-white"
+        className="mt-8 h-[3rem] w-[20.125rem] rounded-md bg-point text-[1.2rem] text-white"
       >
         회원 가입
       </button>

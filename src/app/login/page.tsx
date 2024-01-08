@@ -53,7 +53,7 @@ export default function Login() {
   return (
     <div className="flex h-screen flex-col items-center justify-center gap-[15.125rem] bg-sub-1">
       <Logo className="h-[3.75rem] w-[14.625rem]" />
-      <div className="flex w-full flex-col gap-4 px-[2.125rem]">
+      <div className="flex w-[25rem] flex-col gap-4 px-[2.125rem]">
         <KakaoLogin
           className="kakao-login"
           useLoginForm={true}
