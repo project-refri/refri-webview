@@ -6,17 +6,15 @@ const register = async (
   username: string,
   registerToken: string,
 ): Promise<{ user: User; session_token: string }> =>
-  (
-    await axiosInstance.post(
-      '/auth/register',
-      { username },
-      {
-        headers: {
-          Authorization: `Bearer ${registerToken}`,
-        },
+  await axiosInstance.post(
+    '/auth/register',
+    { username },
+    {
+      headers: {
+        Authorization: `Bearer ${registerToken}`,
       },
-    )
-  ).data;
+    },
+  );
 
 export type OAuthResponse = {
   is_exist: boolean;
