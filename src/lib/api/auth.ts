@@ -20,7 +20,7 @@ const register = async (
 
 export type OAuthResponse = {
   is_exist: boolean;
-  sesstion_token: string | undefined;
+  session_token: string | undefined;
   user: User | undefined;
   register_token: string | undefined;
 };

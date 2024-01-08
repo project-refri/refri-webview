@@ -16,7 +16,7 @@ export default function Login() {
   const handleLogin = async (response: AuthAPI.OAuthResponse) => {
     if (response.is_exist) {
       setState('isAuth', true);
-      setState('sessionToken', response.sesstion_token);
+      setState('sessionToken', response.session_token);
       setState('user', response.user);
     } else {
       setState('registerToken', response.register_token);
