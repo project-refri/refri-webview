@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useGlobalStore } from '../store';
 import * as AuthApi from '../../lib/api/auth';
 import { useRouter } from 'next/navigation';
-import { Logo } from '@/svgs';
+import { Logo, BackIcon } from '@/svgs';
 import toast from 'react-hot-toast';
 import getRandomName from '@/lib/getRandomName';
 
@@ -44,12 +44,19 @@ const RegisterPage = () => {
         <Logo color="#FD7109" className="mr-[0.25rem] inline w-[4rem]" />
         <span className="text-[1.4rem] font-medium">에서 사용할 이름을 알려주세요</span>
       </p>
-      <input
-        type="text"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-        className="outline-non mt-[4rem] h-[2.5rem] w-[20.125rem] border-b-2 border-black pl-[0.8125rem] text-[1.4rem] text-sub-2 outline-none"
-      />
+      <div className="mt-[4rem] flex h-[2.5rem] w-[20.125rem] gap-[15px] ">
+        <input
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          className="grow border-b-2 border-black pl-[0.8125rem] text-[1.4rem] text-sub-2 outline-none"
+        />
+        <BackIcon
+          color="#242325"
+          className="w-[1rem] cursor-pointer"
+          onClick={() => setUsername('')}
+        />
+      </div>
       <button
         onClick={handleRegister}
         disabled={!username}
