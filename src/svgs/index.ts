@@ -14,3 +14,4 @@ export { default as RecipeLogoIcon } from './RecipeLogoIcon';
 export { default as SearchIcon } from './SearchIcon';
 export { default as ArrowDownIcon } from './ArrowDownIcon';
 export { default as SortIcon } from './SortIcon';
+export { default as ResetIcon } from './ResetIcon';

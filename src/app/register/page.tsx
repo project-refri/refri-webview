@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useGlobalStore } from '../store';
 import * as AuthApi from '../../lib/api/auth';
 import { useRouter } from 'next/navigation';
-import { Logo, BackIcon } from '@/svgs';
+import { Logo, ResetIcon } from '@/svgs';
 import toast from 'react-hot-toast';
 import getRandomName from '@/lib/getRandomName';
 
@@ -27,15 +27,15 @@ const RegisterPage = () => {
       router.push('/login');
     } catch {
       toast.error('회원가입에 실패했습니다. 다시 로그인해주세요');
-      router.push('/login');
+      // router.push('/login');
     }
   };
 
-  // useEffect(() => {
-  //   if (!registerToken) {
-  //     router.push('/login');
-  //   }
-  // }, [registerToken]);
+  useEffect(() => {
+    if (!registerToken) {
+      router.push('/login');
+    }
+  }, [registerToken]);
 
   return (
     <div className="flex h-screen w-full flex-col items-center justify-center px-8">
@@ -53,9 +53,9 @@ const RegisterPage = () => {
           onChange={(e) => setUsername(e.target.value)}
           className="grow border-b-2 border-black pl-[0.8125rem] text-[1.4rem] text-sub-2 outline-none"
         />
-        <BackIcon
+        <ResetIcon
           color="#242325"
-          className="w-[1rem] cursor-pointer"
+          className="w-[2rem] cursor-pointer"
           onClick={() => {
             setUsername('');
             inputRef.current?.focus();
